@@ -2,6 +2,9 @@
 #define _HT_H_
 
 #include "node.h"
+#include <iostream>
+#include <string>
+#include <fstream>
 
 template <class KEY, class DATA>
 class Table
@@ -21,6 +24,17 @@ Table& operator=(Table& ht);
 void Add(DATA val_,KEY k_);
 void Del(KEY k_);
 void resize(int newSize);
+void saveInFile(std::string name)
+{
+	std::ofstream fout(name);
+	for(int i=0;i<size;i++)
+	{
+		if (mas[i].isUse() == false)
+			continue;
+		fout << mas[i].GetKey() << std::endl << mas[i].GetData() << std::endl;
+	} 
+	fout.close();
+}
 };
 
 template <class KEY, class DATA>

@@ -11,12 +11,8 @@ void main()
 	t.Add("string3", 49);
 	t.Add("string4", 41);
 
-	std::ofstream fout("base.txt");
-	fout << 15 << std::endl << t[15] << std::endl;
-	fout << 37 << std::endl << t[37] << std::endl;
-	fout << 49 << std::endl << t[49] << std::endl;
-	fout << 41 << std::endl << t[41] << std::endl;
-	fout.close(); 
+	t.saveInFile("base1.txt");
+
 	
 
 	std::cin.get();
